@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages {
     stage ("build") {
-      withEnv (["PATH+ANSIBLE=${tool '2.9.9')}"]) {
+      withEnv (["PATH+ANSIBLE=${tool '2.9.9'}"]) {
         steps {
           echo "etape #1 : build"
           sh 'echo PATH=$PATH'
