@@ -2,12 +2,14 @@ pipeline {
   agent any
   stages {
     stage ("build") {
-      steps {
-        echo "etape #1 : build"
-        sh 'echo PATH=$PATH'
-        sh 'pwd'
-        sh 'id'
-        sh 'ansible --version'
+      withEnv (["PATH+ANSIBLE=${tool '2.9.9')}"]) {
+        steps {
+          echo "etape #1 : build"
+          sh 'echo PATH=$PATH'
+          sh 'pwd'
+          sh 'id'
+          sh 'ansible --version'
+        }
       }
     }
     stage ("test") {
