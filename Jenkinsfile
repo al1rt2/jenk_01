@@ -4,6 +4,9 @@ pipeline {
     stage ("build") {
       steps {
         echo "etape #1 : build"
+        sh 'echo $PATH'
+        sh 'pwd'
+        sh 'ansible --version'
       }
     }
     stage ("test") {
